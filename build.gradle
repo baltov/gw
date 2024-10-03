@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id "application"
+}
+
+group = 'org.gw'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // Mockito core library
+    testImplementation 'org.mockito:mockito-core:5.0.0'
+    testImplementation 'org.mockito:mockito-inline:5.0.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.0.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+
+    testImplementation 'net.bytebuddy:byte-buddy:1.14.17'
+
+}
+
+
+application {
+    mainClass = 'org.gw.Main'
+}
+
+
+test {
+    useJUnitPlatform()
+}
